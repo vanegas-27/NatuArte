@@ -1,12 +1,29 @@
 ---
-import Products from "./Products.astro";
-import Post from "./Post.astro";
+import Products from "@/components/Products.astro";
+import Post from "@/components/Post.astro";
+import Coment from "@/components/Coment.astro";
 ---
 
 
-<section>
-    <Products title="Flores"/>
-	<Products title="Macetas"/>
-	<Products title="Bonsais"/>
+<section id="Productos" >
+    <article class="flex flex-wrap gap-4 py-14 justify-evenly">
+        <Products 
+        title="Bonsáis"
+        url="./pag/bonsais"
+    />
+    <Products 
+        title="Macetas"
+        url="./pag/macetas"
+    />
+    <Products 
+        title="Colgantes"
+        url="./pag/colgantes"
+    />
+    <Products 
+        title="Plantas"
+        url="./pag/plantas"
+    />
+    </article>
+    <Coment />
     <Post />
 </section>
