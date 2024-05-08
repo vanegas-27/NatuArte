@@ -2,18 +2,20 @@
 interface Props {
   title: string;
   url : string;
+  img : string;
 }
-const { title, url } = Astro.props;
+const { title, url, img } = Astro.props;
+const estilo = `background-image: url(${img})`
 ---
 
-<a class="card" href={url}>{title}</a>
+<a class="card" style={estilo} href={url}>{title}</a>
 
 <style>
   .card {
   position: relative;
   width: 220px;
   height: 320px;
-  background-image: url(./img/01.webp);
+  /* background-image: url(./img/01.webp); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

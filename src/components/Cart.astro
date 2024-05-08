@@ -1,0 +1,152 @@
+---
+interface Props {
+    img :string;
+}
+
+const { img } = Astro.props
+---
+
+<div class="card">
+    <div class="profile-pic">
+        
+        <img src={img} alt="lol">
+
+    </div>
+    <div class="bottom">
+        <div class="content">
+            <span class="name">My Name</span>
+            <span class="about-me">Lorem ipsum dolor sit amet consectetur adipisicinFcls </span>
+        </div>
+       <div class="bottom-bottom">
+        <div class="social-links-container">
+            <a href="https://www.instagram.com/naturarte_2923/"
+            target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.999" viewBox="0 0 16 15.999">
+                <path id="Subtraction_4" data-name="Subtraction 4" d="M6-582H-2a4,4,0,0,1-4-4v-8a4,4,0,0,1,4-4H6a4,4,0,0,1,4,4v8A4,4,0,0,1,6-582ZM2-594a4,4,0,0,0-4,4,4,4,0,0,0,4,4,4,4,0,0,0,4-4A4.005,4.005,0,0,0,2-594Zm4.5-2a1,1,0,0,0-1,1,1,1,0,0,0,1,1,1,1,0,0,0,1-1A1,1,0,0,0,6.5-596ZM2-587.5A2.5,2.5,0,0,1-.5-590,2.5,2.5,0,0,1,2-592.5,2.5,2.5,0,0,1,4.5-590,2.5,2.5,0,0,1,2-587.5Z" transform="translate(6 598)"></path>
+            </svg>
+            </a>
+        </div>
+        <a href="mailto:naturarte2923@gmail.com" class="button">Contact Me</button>
+       </div>
+    </div>
+</div>
+
+<style>
+.card {
+    width:90%;
+  max-width: 300px;
+  height: 380px;
+  background: white;
+  border-radius: 20px;
+  padding: 3px;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+.card .mail {
+  position: absolute;
+  right: 2rem;
+  top: 1.4rem;
+  background: transparent;
+  border: none;
+}
+
+.card .profile-pic {
+  position: absolute;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  top: 3px;
+  left: 3px;
+  border-radius: 29px;
+  z-index: 1;
+  border: 0px solid #fbb9b6;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out 0.2s, z-index 0.5s ease-in-out 0.2s;
+}
+
+.card .profile-pic img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.card .bottom {
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
+  right: 3px;
+  background: transparent;
+  top: 80%;
+  border-radius: 29px;
+  z-index: 2;
+  box-shadow: rgba(0, 0, 0, 0.188) 0px 5px 5px 0px inset;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+
+.card .bottom .content {
+  position: absolute;
+  bottom: 0;
+  left: 1.5rem;
+  right: 1.5rem;
+  height: 160px;
+}
+
+.card .bottom .content .name {
+  display: block;
+  font-size: 1.1rem;
+  color: white;
+  font-weight: bold;
+}
+
+.card .bottom .content .about-me {
+  display: block;
+  font-size: 0.9rem;
+  color: white;
+  margin-top: 1rem;
+}
+
+.card .bottom .bottom-bottom {
+  position: absolute;
+  bottom: 1rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card .bottom .bottom-bottom .social-links-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.card .bottom .bottom-bottom .social-links-container svg {
+  height: 20px;
+  fill: white;
+  filter: drop-shadow(0 5px 5px rgba(165, 132, 130, 0.1333333333));
+}
+
+.card .bottom .bottom-bottom .social-links-container svg:hover {
+  fill: #15b477;
+  transform: scale(1.2);
+}
+
+.card .bottom .bottom-bottom .button {
+  background: #15b477;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.6rem;
+  padding: 0.4rem 0.6rem;
+  box-shadow: rgba(165, 132, 130, 0.1333333333) 0px 5px 5px 0px;
+  transition: transform .40s ease-in-out;
+}
+
+.card:hover .bottom {
+  top: 0px;
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+  background-color: rgba(0, 0, 0, 0.555);
+}
+
+</style>

@@ -1,8 +1,32 @@
 ---
 import Pag from "@/layouts/pag.astro";
+import Cart from "@/components/Cart.astro";
 ---
 
 
 <Pag title="Bonsais"> 
-    <h1>Bonsais</h1>
+    <main class="mx-4">
+        <h1 class="text-primary text-4xl text-center font-bold sm:text-6xl my-14">Bonsais</h1>
+
+        <section class="flex flex-wrap gap-x-4 gap-y-8 w-full max-w-[1000px] m-auto justify-around my-8">
+            <Cart 
+                img="../img/bonsais.webp"
+            />
+            <Cart 
+                img="../img/bonsais.webp"
+            />
+            <Cart 
+                img="../img/bonsais.webp"
+            />
+            <Cart 
+                img="../img/bonsais.webp"
+            />
+            <Cart 
+                img="../img/bonsais.webp"
+            />
+            <Cart 
+                img="../img/bonsais.webp"
+            />
+        </section>
+    </main>
 </Pag>
