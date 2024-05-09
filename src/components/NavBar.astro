@@ -5,8 +5,8 @@ interface Props {
 
 const { img } = Astro.props
 ---
-<header class="bg-white" id="Inicio">
-  <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 p-2">
+<header class="relative" id="Inicio">
+  <div class="bg-[#ffffffc9] mx-auto right-0 left-0 z-10 p-3 sm:px-6 lg:px-8 fixed transition-all duration-300 shadow-sm" id="navbar">
     <div class="flex h-16 items-center justify-between">
       <div class="md:flex md:items-center md:gap-12">
         <a class="block text-teal-600" href="/">
@@ -21,70 +21,73 @@ const { img } = Astro.props
 
       <div class="hidden md:block">
         <nav aria-label="Global">
-          <ul class="flex items-center gap-6 text-md">
+          <ul class="flex items-center gap-8 text-md">
             <li>
-              <a class="text-gray-500 transition hover:text-gray-500/75" href="/">Inicio</a>
+              <a class="text-primary transition hover:text-black/75 font-bold text-[20px]" href="/">Inicio</a>
             </li>
 
             <li>
-              <a class="text-gray-500 transition hover:text-gray-500/75" href="#Servicios">Servicios</a>
+              <a class="text-primary transition hover:text-black/75 font-bold text-[20px]" href="#Servicios">Servicios</a>
             </li>
 
             <li>
-              <a class="text-gray-500 transition hover:text-gray-500/75" href="#Productos">Productos</a>
+              <a class="text-primary transition hover:text-black/75 font-bold text-[20px]" href="#Productos">Productos</a>
             </li>
 
             <li>
-              <a class="text-gray-500 transition hover:text-gray-500/75" href="#Destacado">Destacado</a>
+              <a class="text-primary transition hover:text-black/75 font-bold text-[20px]" href="#Destacado">Destacado</a>
             </li>
 
             <li>
-              <a class="text-gray-500 transition hover:text-gray-500/75" href="#Nosotros">Nosotros</a>
+              <a class="text-primary transition hover:text-black/75 font-bold text-[20px]" href="#Nosotros">Nosotros</a>
             </li>
 
             <li>
-              <a class="text-gray-500 transition hover:text-gray-500/75" href="#Contactenos">Contactenos</a>
+              <a class="text-primary transition hover:text-black/75 font-bold text-[20px]" href="#Contactenos">Contactenos</a>
             </li>
 
           </ul>
         </nav>
       </div>
 
-      <div class="flex items-center gap-4">
-        <div class="sm:flex sm:gap-4">
-          <a
-            class="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
-            href="#"
+        
+      <div class="block md:hidden">
+        <button class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
           >
-            Login
-          </a>
-
-          <div class="hidden sm:flex">
-            <a
-              class="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
-              href="#"
-            >
-              Register
-            </a>
-          </div>
-        </div>
-
-        <div class="block md:hidden">
-          <button class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
       </div>
+
       
     </div>
   </div>
 </header>
+
+<script>
+
+  let prevScrollpos = window.pageYOffset;
+  
+  window.onscroll = function () {
+    let currentScrollPos = window.pageYOffset;
+    let navbar = document.getElementById("navbar");
+  
+    if(navbar === null) throw new Error("error: menu")
+  
+    if (prevScrollpos > currentScrollPos) {
+      navbar.style.top = "0px";
+    } else {
+      navbar.style.top = `-${navbar.clientHeight}px`;
+    }
+  
+    prevScrollpos = currentScrollPos;
+  };
+  
+  </script>
