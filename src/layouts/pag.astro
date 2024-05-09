@@ -1,7 +1,7 @@
 ---
 import NavBar from '@/components/NavBar.astro';
 import Footer from '@/components/Footer.astro';
-
+import Wp from '@/components/icons/Wp.astro';
 
 interface Props {
     title : string;
@@ -25,11 +25,14 @@ const {title} = Astro.props
 		<NavBar 
 			img='../img/logo.webp'
 		/> 
-		<span>.</span>
+		<span class="text-transparent">.</span>
 		<slot/>
 	</body>
     <Footer 
 	img='../img/logo.webp'/>
+	<div class="relative">
+		<Wp />
+	</div>
 </html>
 
 <style>
