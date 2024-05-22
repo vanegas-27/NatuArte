@@ -1,9 +1,11 @@
 ---
 interface Props {
-    img :string;
+    img : string;
+    na : string;
+    text : string;
 }
 
-const { img } = Astro.props
+const { img ,na ,text } = Astro.props
 ---
 
 <div class="card">
@@ -14,8 +16,8 @@ const { img } = Astro.props
     </div>
     <div class="bottom">
         <div class="content">
-            <span class="name">My Name</span>
-            <span class="about-me">Lorem ipsum dolor sit amet consectetur adipisicinFcls </span>
+            <span class="name">{na}</span>
+            <span class="about-me">{text}</span>
         </div>
        <div class="bottom-bottom">
         <div class="social-links-container">
@@ -44,7 +46,7 @@ const { img } = Astro.props
               fin
               -->
         </div>
-        <a href="mailto:naturarte2923@gmail.com" class="button">Contactame</button>
+        <a href="https://wa.me/+573244487734?text=Holaa, vengo desde tu sitio web. estoy interesado en adquirir un producto." class="button">Contactame</button>
        </div>
     </div>
 </div>
